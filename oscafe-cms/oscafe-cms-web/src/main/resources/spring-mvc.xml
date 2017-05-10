@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <!--配置自动扫描的包-->
+    <context:component-scan base-package="com.liwy.oscafe.web" use-default-filters="false">
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller" />
+        <context:include-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice" />
+    </context:component-scan>
+    <!--定义视图解析器-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/" />
+        <property name="suffix" value=".jsp" />
+    </bean>
+    <!--自定义视图解析器-->
+    <bean class="org.springframework.web.servlet.view.BeanNameViewResolver">
+        <property name="order" value="100" />
+    </bean>
+
+    <!--使用默认的Servlet handler,防止静态资源被拦截-->
+    <mvc:default-servlet-handler></mvc:default-servlet-handler>
+
+    <!--
+    <mvc:annotation-driven /> 会自动注册
+    RequestMappingHandlerMapping
+    RequestMappingHandlerAdapter
+    ExceptionHandlerExceptionResolver
+    三个bean。
+    还将提供以下支持：
+    支持使用 ConversionService 实例对表单参数进行类型转换
+    支持使用 @NumberFormat annotation、@DateTimeFormat 注解完成数据类型的格式化
+    支持使用 @Valid 注解对 JavaBean 实例进行 JSR 303 验证
+    支持使用 @RequestBody 和 @ResponseBody 注解-->
+    <mvc:annotation-driven conversion-service="conversionService"></mvc:annotation-driven>
+
+    <!--自定义类型转换器
+        并将其绑定到annotation-driven的conversion-service属性上
+    -->
+    <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+        <property name="converters">
+            <set>
+                <ref bean="myConversion" />
+            </set>
+        </property>
+    </bean>
+
+    <!--配置国际化-->
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename" value="i18n" />
+    </bean>
+
+    <!--配置可切换locale语言处理器
+        并配置一个LocaleChange拦截器
+    -->
+    <bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver"></bean>
+    <mvc:interceptors>
+        <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor"></bean>
+
+        <!--自定义拦截器
+        <bean class="com.liwy.oscafe.web.controller.interceptor.MyInterceptor"></bean>-->
+        <mvc:interceptor>
+            <!--设置拦截器作用的path-->
+            <mvc:mapping path="/articles"/>
+            <bean class="com.liwy.oscafe.web.controller.interceptor.MyInterceptor"></bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
+
+    <!-- 配置文件上传处理器 -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="UTF-8" />
+        <property name="maxUploadSize" value="1024000" />
+    </bean>
+
+</beans>
