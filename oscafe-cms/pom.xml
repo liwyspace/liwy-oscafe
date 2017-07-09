@@ -32,7 +32,7 @@
             </dependency>
             <dependency>
                 <groupId>com.liwy.commons</groupId>
-                <artifactId>liwy-commons-lang</artifactId>
+                <artifactId>commons-lang</artifactId>
                 <version>0.0.1</version>
                 <type>jar</type>
             </dependency>
