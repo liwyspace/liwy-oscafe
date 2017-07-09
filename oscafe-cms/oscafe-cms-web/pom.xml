@@ -24,7 +24,7 @@
         </dependency>
         <dependency>
             <groupId>com.liwy.commons</groupId>
-            <artifactId>liwy-commons-lang</artifactId>
+            <artifactId>commons-lang</artifactId>
         </dependency>
 
         <!--Mysql驱动-->
