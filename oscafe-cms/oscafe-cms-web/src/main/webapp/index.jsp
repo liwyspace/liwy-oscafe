@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <body>
-<h1>4</h1>
+<h1>5</h1>
 <h2>Hello World!</h2>
 <a href="articles">进入文章列表页面</a><br/>
 <a href="articles?locale=zh_CN">进入文章列表页面-中文</a><br/>
