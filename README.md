@@ -1,7 +1,38 @@
-# liwy-oscafe
-JAVA - 开源小屋架构项目
+# LIWY-OSCAFE
 
-#### 后端技术:
+[![JDK 1.8](https://img.shields.io/badge/JDK-1.8-green.svg)]()
+[![GitHub license](https://img.shields.io/github/license/liwyspace/liwy-oscafe.svg)](https://github.com/liwyspace/liwy-oscafe/blob/master/LICENSE)
+[![GitHub issues](https://img.shields.io/github/issues/liwyspace/liwy-oscafe.svg?style=social)](https://github.com/liwyspace/liwy-oscafe/issues)
+[![GitHub stars](https://img.shields.io/github/stars/liwyspace/liwy-oscafe.svg?style=social)](https://github.com/liwyspace/liwy-oscafe/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/liwyspace/liwy-oscafe.svg?style=social)](https://github.com/liwyspace/liwy-oscafe/network)
+
+* __作者：__ LIWY
+* __QQ：__ 332301842
+* __微信：__ liwy1024611
+* __邮箱：__ liwy1024@163.com
+* __github:__ [https://github.com/liwyspace/](https://github.com/liwyspace/)
+* __gitee:__ [https://gitee.com/liwycode/](https://gitee.com/liwycode/)
+* __team@osc:__ [https://team.oschina.net/liwy/](https://team.oschina.net/liwy/)
+* __开源小屋官网：__ [www.oscafe.org](http://www.oscafe.org) / [www.oscafe.net](http://www.oscafe.net)
+* __开源小屋公众号：__ oscafe_net
+
+![开源小屋www.oscafe.org 公众平台二维码](https://github.com/liwyspace/liwy-oscafe/raw/master/docs/resources/oscafe_qrcode.jpg)
+
+
+## 1. 前言
+liwy-oscafe 开源小屋架构项目
+
+
+## 2. 模块
+
+* oscafe-cms
+  * oscafe-cms-common
+  * oscafe-cms-web
+* oscafe-common
+
+
+## 3. 后端技术
+
 技术 | 名称 | 官网
 ----|------|----
 Spring Framework | 容器  | [http://projects.spring.io/spring-framework/](http://projects.spring.io/spring-framework/)
@@ -32,7 +63,9 @@ Protobuf & json | 数据序列化  | [https://github.com/google/protobuf](https:
 Jenkins | 持续集成工具  | [https://jenkins.io/index.html](https://jenkins.io/index.html)
 Maven | 项目构建管理  | [http://maven.apache.org/](http://maven.apache.org/)
 
-#### 前端技术:
+
+## 4. 前端技术
+
 技术 | 名称 | 官网
 ----|------|----
 jQuery | 函式库  | [http://jquery.com/](http://jquery.com/)
@@ -50,3 +83,45 @@ zhengAdmin | 后台管理系统模板  | [https://github.com/shuzheng/zhengAdmin
 autoMail | 邮箱地址自动补全插件  | [https://github.com/shuzheng/autoMail](https://github.com/shuzheng/autoMail)
 zheng.jprogress.js | 加载进度条插件  | [https://github.com/shuzheng/zheng.jprogress.js](https://github.com/shuzheng/zheng.jprogress.js)
 zheng.jtotop.js | 返回顶部插件  | [https://github.com/shuzheng/zheng.jtotop.js](https://github.com/shuzheng/zheng.jtotop.js)
+
+
+## 5. 文档 
+
+请移步: [http://liwy-oscafe.mydoc.io/](http://liwy-commons.mydoc.io/)
+
+
+## 6. 参考
+* shuzheng/zheng   [https://gitee.com/shuzheng/zheng](https://gitee.com/shuzheng/zheng)
+* binu/xbin-store [https://gitee.com/binu/xbin-store](https://gitee.com/binu/xbin-store)
+
+
+## 7. 支持
+![微信付款码](https://github.com/liwyspace/liwy-oscafe/raw/master/docs/resources/weixin_fkcode.jpg)
+![支付宝付款码](https://github.com/liwyspace/liwy-oscafe/raw/master/docs/resources/zhifubao_fkcode.jpg)
+
+
+## 8. Changelog
+
+### 1.0.1
+
+_新特性：_
+
+* 增加StrUtil.removeAll
+
+_Bug修复：_
+
+* 修正Http模块无法301和302重定向问题
+
+### 1.0.0
+
+_新特性：_
+
+* 增加StrUtil.removeAll
+* 增加RandomUtil.randomEleSet方法
+* 增加 CollectionUtil.distinct方法
+* 增加BASE32实现
+
+_Bug修复：_
+
+* 修正Http模块无法301和302重定向问题
+* 修复SqlBuilder中Insert值为null时SQL语句错误问题
