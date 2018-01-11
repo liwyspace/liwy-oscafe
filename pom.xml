@@ -7,7 +7,7 @@
     <groupId>com.liwy.oscafe</groupId>
     <artifactId>liwy-oscafe</artifactId>
     <packaging>pom</packaging>
-    <version>0.0.1</version>
+    <version>1.0-SNAPSHOT</version>
 
     <name>liwy-oscafe</name>
     <url>http://www.oscafe.org</url>
@@ -25,6 +25,8 @@
     <modules>
         <module>oscafe-common</module>
         <module>oscafe-cms</module>
+        <module>oscafe-upms</module>
+        <module>oscafe-upms</module>
     </modules>
 
 </project>

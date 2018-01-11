@@ -67,7 +67,7 @@
         <mvc:interceptor>
             <!--设置拦截器作用的path-->
             <mvc:mapping path="/articles"/>
-            <bean class="com.liwy.oscafe.web.controller.interceptor.MyInterceptor"></bean>
+            <bean class="com.liwy.oscafe.common.web.controller.interceptor.MyInterceptor"></bean>
         </mvc:interceptor>
     </mvc:interceptors>
 

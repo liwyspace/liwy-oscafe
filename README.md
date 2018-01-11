@@ -13,7 +13,7 @@
 * __github:__ [https://github.com/liwyspace/](https://github.com/liwyspace/)
 * __gitee:__ [https://gitee.com/liwycode/](https://gitee.com/liwycode/)
 * __team@osc:__ [https://team.oschina.net/liwy/](https://team.oschina.net/liwy/)
-* __开源小屋官网：__ [www.oscafe.org](http://www.oscafe.org) / [www.oscafe.net](http://www.oscafe.net)
+* __开源小屋官网：__ [http://www.oscafe.org](http://www.oscafe.org) / [http://www.oscafe.net](http://www.oscafe.net)
 * __开源小屋公众号：__ oscafe_net
 
 ![开源小屋www.oscafe.org 公众平台二维码](https://github.com/liwyspace/liwy-oscafe/raw/master/docs/resources/oscafe_qrcode.jpg)
@@ -85,22 +85,25 @@ zheng.jprogress.js | 加载进度条插件  | [https://github.com/shuzheng/zheng
 zheng.jtotop.js | 返回顶部插件  | [https://github.com/shuzheng/zheng.jtotop.js](https://github.com/shuzheng/zheng.jtotop.js)
 
 
-## 5. 文档 
+## 5. 模块依赖
+![模块依赖图](https://github.com/liwyspace/liwy-oscafe/raw/master/docs/resources/dependency.jpg)
+
+## 6. 文档 
 
 请移步: [http://liwy-oscafe.mydoc.io/](http://liwy-commons.mydoc.io/)
 
 
-## 6. 参考
+## 7. 参考
 * shuzheng/zheng   [https://gitee.com/shuzheng/zheng](https://gitee.com/shuzheng/zheng)
 * binu/xbin-store [https://gitee.com/binu/xbin-store](https://gitee.com/binu/xbin-store)
 
 
-## 7. 支持
+## 8. 支持
 ![微信付款码](https://github.com/liwyspace/liwy-oscafe/raw/master/docs/resources/weixin_fkcode.jpg)
 ![支付宝付款码](https://github.com/liwyspace/liwy-oscafe/raw/master/docs/resources/zhifubao_fkcode.jpg)
 
 
-## 8. Changelog
+## 9. Changelog
 
 ### 1.0.1
 

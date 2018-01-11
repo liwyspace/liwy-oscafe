@@ -58,7 +58,7 @@
     </tx:advice>
     <!--6.配置事务切入点-->
     <aop:config>
-        <aop:pointcut id="fooServiceOperation" expression="execution(* com.liwy.oscafe.web.service.impl.ArticleServiceImpl.*(..))"/>
+        <aop:pointcut id="fooServiceOperation" expression="execution(* com.liwy.oscafe.common.web.service.impl.ArticleServiceImpl.*(..))"/>
         <aop:advisor advice-ref="txAdvice" pointcut-ref="fooServiceOperation"/>
     </aop:config>
 </beans>
