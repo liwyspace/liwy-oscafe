@@ -90,7 +90,7 @@ zheng.jtotop.js | 返回顶部插件  | [https://github.com/shuzheng/zheng.jtoto
 
 ## 6. 文档 
 
-请移步: [http://liwy-oscafe.mydoc.io/](http://liwy-commons.mydoc.io/)
+请移步: [http://liwy-oscafe.mydoc.io/](http://liwy-oscafe.mydoc.io/)
 
 
 ## 7. 参考
