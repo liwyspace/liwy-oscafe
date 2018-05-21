@@ -16,6 +16,7 @@
         <module>oscafe-upms-dao</module>
         <module>oscafe-upms-api</module>
         <module>oscafe-upms-service</module>
+        <module>oscafe-upms-web</module>
     </modules>
 
 

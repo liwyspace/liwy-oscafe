@@ -11,5 +11,12 @@
 
     <artifactId>oscafe-upms-common</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.liwy.oscafe</groupId>
+            <artifactId>oscafe-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
 </project>

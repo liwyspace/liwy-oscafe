@@ -26,7 +26,6 @@
         <module>oscafe-common</module>
         <module>oscafe-cms</module>
         <module>oscafe-upms</module>
-        <module>oscafe-upms</module>
     </modules>
 
 </project>
