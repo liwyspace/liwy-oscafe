@@ -25,11 +25,20 @@ liwy-oscafe 开源小屋架构项目
 
 ## 2. 模块
 
-* oscafe-cms
-  * oscafe-cms-common
-  * oscafe-cms-web
-* oscafe-common
-
+* oscafe-common 公共模块
+* oscafe-core 核心模块（笔记、教程、作品、收藏）
+  * oscafe-core-common
+  * oscafe-core-dao
+  * oscafe-core-service
+  * oscafe-core-api
+  * oscafe-core-web
+* oscae-unit 组件模块（小游戏、小功能、组件）
+* oscafe-comment 评论模块
+* oscafe-upms 用户权模块【可抽离单独项目】
+* oscafe-pay 支付模块【可抽离单独项目】
+* oscafe-shop 商城模块 【可抽离单独项目】
+* oscafe-portal 前端门户（HTML5）
+* oscafe-admin 后端管理系统（VUE）
 
 ## 3. 后端技术
 
