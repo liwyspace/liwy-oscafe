@@ -13,8 +13,11 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>oscafe-cms-common</module>
-        <module>oscafe-cms-web</module>
+        <module>oscafe-core-common</module>
+        <module>oscafe-core-web</module>
+        <module>oscafe-core-dao</module>
+        <module>oscafe-core-service</module>
+        <module>oscafe-core-api</module>
     </modules>
 
     <properties>
