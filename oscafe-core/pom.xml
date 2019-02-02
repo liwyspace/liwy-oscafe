@@ -11,6 +11,7 @@
 
     <artifactId>oscafe-core</artifactId>
     <packaging>pom</packaging>
+    <version>1.0.0</version>
 
     <modules>
         <module>oscafe-core-common</module>
@@ -18,9 +19,17 @@
         <module>oscafe-core-dao</module>
         <module>oscafe-core-service</module>
         <module>oscafe-core-api</module>
+        <module>oscafe-core-manager</module>
     </modules>
 
     <properties>
+        <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>utf-8</project.reporting.outputEncoding>
+
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
+
         <jdk.version>1.8</jdk.version>
         <junit.version>4.12</junit.version>
     </properties>

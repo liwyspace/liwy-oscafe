@@ -1,4 +1,4 @@
-package com.liwy.oscafe.core.entity.base;
+package com.liwy.oscafe.core.entity;
 
 /**
  * <b>模块：</b> <br/>
@@ -8,5 +8,5 @@ package com.liwy.oscafe.core.entity.base;
  * <b>创建时间：</b> 2018/9/26 18:48 <br/>
  * <b>版本：</b> V1.0 <br/>
  */
-public class BaseSiteCompany {
+public class BaseSiteModel {
 }

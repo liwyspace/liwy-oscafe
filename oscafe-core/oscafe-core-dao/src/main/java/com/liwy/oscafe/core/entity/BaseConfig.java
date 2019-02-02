@@ -1,4 +1,4 @@
-package com.liwy.oscafe.core.entity.base;
+package com.liwy.oscafe.core.entity;
 
 /**
  * <b>模块：</b> <br/>
