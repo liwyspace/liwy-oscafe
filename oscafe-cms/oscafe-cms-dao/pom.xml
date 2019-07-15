@@ -13,57 +13,85 @@
     <packaging>jar</packaging>
 
     <name>oscafe-cms-dao</name>
-    <!-- FIXME change it to the project's website -->
-    <url>http://www.example.com</url>
+    <url>http://www.oscafe.net</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.7</maven.compiler.source>
-        <maven.compiler.target>1.7</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
     <dependencies>
+        <!-- 单元测试 -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.11</version>
+            <version>4.12</version>
             <scope>test</scope>
+        </dependency>
+        <!-- CMS公共项目 -->
+        <dependency>
+            <groupId>com.liwy.oscafe</groupId>
+            <artifactId>oscafe-cms-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <!--Mysql驱动-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.40</version>
+        </dependency>
+        <!-- mybatis包 -->
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>3.4.2</version>
+        </dependency>
+        <!--druid数据库连接池-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.1.6</version>
         </dependency>
     </dependencies>
 
     <build>
-        <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
-            <plugins>
-                <plugin>
-                    <artifactId>maven-clean-plugin</artifactId>
-                    <version>3.0.0</version>
-                </plugin>
-                <!-- see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->
-                <plugin>
-                    <artifactId>maven-resources-plugin</artifactId>
-                    <version>3.0.2</version>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.7.0</version>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-surefire-plugin</artifactId>
-                    <version>2.20.1</version>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-jar-plugin</artifactId>
-                    <version>3.0.2</version>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-install-plugin</artifactId>
-                    <version>2.5.2</version>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-deploy-plugin</artifactId>
-                    <version>2.8.2</version>
-                </plugin>
-            </plugins>
-        </pluginManagement>
+        <finalName>oscafe-cms-dao</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>false</filtering>
+            </resource>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-maven-plugin</artifactId>
+                <version>1.3.7</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>mysql</groupId>
+                        <artifactId>mysql-connector-java</artifactId>
+                        <version>5.1.40</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>com.liwy.oscafe</groupId>
+                        <artifactId>oscafe-common</artifactId>
+                        <version>1.0-SNAPSHOT</version>
+                    </dependency>
+                </dependencies>
+                <configuration>
+                    <verbose>true</verbose>
+                    <overwrite>true</overwrite>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
 </project>

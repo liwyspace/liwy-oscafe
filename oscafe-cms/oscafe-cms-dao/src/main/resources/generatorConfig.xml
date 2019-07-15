@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <!-- 配置文件 -->
+    <properties resource="jdbc.properties"></properties>
+
+    <context id="MySqlContext" targetRuntime="MyBatis3" defaultModelType="flat">
+
+        <property name="javaFileEncoding" value="UTF-8"/>
+        <!-- 由于beginningDelimiter和endingDelimiter的默认值为双引号(")，在Mysql中不能这么写，所以还要将这两个默认值改为`  -->
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+
+        <!-- 为生成的Java模型创建一个toString方法 -->
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"></plugin>
+
+        <!-- Java模型生成equals和hashcode方法 -->
+        <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"></plugin>
+
+        <!--覆盖生成XML文件-->
+        <plugin type="org.mybatis.generator.plugins.UnmergeableXmlMappersPlugin" />
+
+        <!-- JavaMapper后缀 -->
+        <plugin type="com.liwy.oscafe.common.mybatis.RenameJavaMapperPlugin">
+            <property name="suffix" value="Dao"/>
+        </plugin>
+
+        <!-- 生成的代码去掉注释 -->
+        <commentGenerator type="com.liwy.oscafe.common.mybatis.ModelCommentGenerator">
+            <property name="suppressAllComments" value="true"/>
+            <property name="dateFormat" value="yyyy-MM-dd HH:mm:ss"/>
+            <property name="author" value="liwy"/>
+        </commentGenerator>
+
+        <!-- 数据库连接 -->
+        <jdbcConnection driverClass="${master.jdbc.driver}"
+                        connectionURL="${master.jdbc.url}"
+                        userId="${master.jdbc.username}"
+                        password="${master.jdbc.password}">
+            <property name="useInformationSchema" value="true"/>
+        </jdbcConnection>
+
+        <!-- Model 生成器 -->
+        <javaModelGenerator targetPackage="com.liwy.oscafe.cms.dao.model" targetProject="src/main/java"/>
+
+        <!-- SqlMap生成器 -->
+        <sqlMapGenerator targetPackage="com.liwy.oscafe.cms.dao.mapper" targetProject="src/main/java" />
+
+        <!-- 接口生成器 -->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.liwy.oscafe.cms.dao" targetProject="src/main/java"/>
+
+        <!-- 需要的所有表 -->
+        <table tableName="cms_channel" domainObjectName="Channel" enableCountByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"/>
+
+        <table tableName="cms_comment" domainObjectName="Comment" enableCountByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"/>
+
+        <table tableName="cms_content" domainObjectName="Content" enableCountByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"/>
+
+        <table tableName="cms_content_tag_rel" domainObjectName="ContentTagRel" enableCountByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"/>
+
+        <table tableName="cms_content_topic_rel" domainObjectName="ContentTopicRel" enableCountByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"/>
+
+        <table tableName="cms_tag" domainObjectName="Tag" enableCountByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"/>
+
+        <table tableName="cms_template" domainObjectName="Template" enableCountByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"/>
+
+        <table tableName="cms_topic" domainObjectName="Topic" enableCountByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"/>
+
+    </context>
+</generatorConfiguration>

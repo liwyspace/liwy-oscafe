@@ -14,6 +14,8 @@
     <modules>
         <module>oscafe-cms-dao</module>
         <module>oscafe-cms-common</module>
+        <module>oscafe-cms-service</module>
+        <module>oscafe-cms-api</module>
     </modules>
 
     <properties>
@@ -28,12 +30,6 @@
                 <artifactId>junit</artifactId>
                 <version>${junit.version}</version>
                 <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>com.liwy.commons</groupId>
-                <artifactId>liwy-commons-lang</artifactId>
-                <version>0.0.1</version>
-                <type>jar</type>
             </dependency>
         </dependencies>
     </dependencyManagement>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!-- 配置文件 -->
+    <properties resource="jdbc.properties"/>
+
+    <!-- 系统设置 -->
+    <settings>
+        <!--
+            是否开启自动驼峰命名规则（camel case）映射，
+            即从经典数据库列名 A_COLUMN 到经典 Java 属性名 aColumn 的类似映射。
+        -->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+
+    <!-- 别名 -->
+    <typeAliases>
+        <!--<typeAlias alias="UpmsUser" type="UpmsUser" />-->
+        <package name="com.liwy.oscafe.cms.dao.model"/>
+    </typeAliases>
+
+    <!-- 配置环境 -->
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="com.liwy.oscafe.common.mybatis.DruidDataSourceFactory">
+                <!-- 基本属性 url、user、password -->
+                <!-- <property name="driver" value="${connection.driver}"/> -->
+                <property name="url" value="${master.jdbc.url}"/>
+                <property name="username" value="${master.jdbc.username}"/>
+                <property name="password" value="${master.jdbc.password}"/>
+
+                <!-- 配置初始化大小、最小、最大 -->
+                <property name="initialSize" value="${druid.initialSize}" />
+                <property name="minIdle" value="${druid.minIdle}" />
+                <property name="maxActive" value="${druid.maxActive}" />
+
+                <!-- 配置获取连接等待超时的时间 -->
+                <property name="maxWait" value="${druid.maxWait}" />
+
+                <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+                <property name="timeBetweenEvictionRunsMillis" value="${druid.timeBetweenEvictionRunsMillis}" />
+
+                <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+                <property name="minEvictableIdleTimeMillis" value="${druid.minEvictableIdleTimeMillis}" />
+
+                <property name="validationQuery" value="${druid.validationQuery}" />
+                <property name="testWhileIdle" value="${druid.testWhileIdle}" />
+                <property name="testOnBorrow" value="${druid.testOnBorrow}" />
+                <property name="testOnReturn" value="${druid.testOnReturn}" />
+
+                <!-- 打开PSCache，并且指定每个连接上PSCache的大小 如果用Oracle，则把poolPreparedStatements配置为true，mysql可以配置为false。 -->
+                <property name="poolPreparedStatements" value="${druid.poolPreparedStatements}" />
+                <property name="maxPoolPreparedStatementPerConnectionSize"
+                          value="${druid.maxPoolPreparedStatementPerConnectionSize}" />
+
+                <!-- 配置监控统计拦截的filters -->
+                <property name="filters" value="${druid.filters}" />
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!-- 映射器 -->
+    <mappers>
+        <mapper resource="com/liwy/oscafe/cms/dao/mapper/ChannelMapper.xml"/>
+        <mapper resource="com/liwy/oscafe/cms/dao/mapper/CommentMapper.xml"/>
+        <mapper resource="com/liwy/oscafe/cms/dao/mapper/ContentMapper.xml"/>
+        <mapper resource="com/liwy/oscafe/cms/dao/mapper/ContentTagRelMapper.xml" />
+        <mapper resource="com/liwy/oscafe/cms/dao/mapper/ContentTopicRelMapper.xml"/>
+        <mapper resource="com/liwy/oscafe/cms/dao/mapper/TagMapper.xml"/>
+        <mapper resource="com/liwy/oscafe/cms/dao/mapper/TemplateMapper.xml"/>
+        <mapper resource="com/liwy/oscafe/cms/dao/mapper/TopicMapper.xml"/>
+    </mappers>
+</configuration>
